@@ -38,8 +38,8 @@ while 1:
 	# Print that the new socket connection has been accepted
 	print('New connection accepted - ' + address[0] + '')
 
+# Print that it will close the accepted socket connection
+print('Closing accepted connection.')
+
 # Close the socket connection
 socket.close()
-
-# Print that the socket connection that was accepted has been closed
-print('Connection has been closed.')

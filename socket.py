@@ -12,29 +12,34 @@ port = 6112
 # Create the socket
 socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM);
 
-# Log that the socket was created 
+# Print that the socket was created 
 print('Socket has been successfully created.')
 
 # Try to bind the socket
 try:
 	socket.bind((host, port))
 except socket.error as error:
-	# Log that the socket was not able to bind
+	# Print that the socket was not able to bind
 	print('Socket bind failed - ' + error[1] + '')
 
-# If there was no exception, log that the socket bind was successfull
+# If there was no exception, print that the socket bind was successfull
 print('Successful socket bind.')
 
 # Start listening for socket connections
 socket.listen(5)
 
-# Log that it has started to listen for socket connections
+# Print that it has started to listen for socket connections
 print('Listening for connections.')
 
 # Accept socket connections in a endless loop
 while 1:
 	connection, address = socket.accept()
+	
+	# Print that the new socket connection has been accepted
 	print('New connection accepted - ' + address[0] + '')
 
 # Close the socket connection
 socket.close()
+
+# Print that the socket connection that was accepted has been closed
+print('Connection has been closed.')
